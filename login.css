@@ -1,0 +1,196 @@
+:root {
+            --main-green: #228B22;
+            --dark-green: #006400;
+            --light-green: #90EE90;
+            --cream: #FBFFF5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--cream);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .main-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 20px;
+        z-index: 100;
+    }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--main-green);
+        }
+
+        .logo-image {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: var(--dark-green);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark-green);
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: var(--main-green);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.2);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--main-green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-2px);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+            margin: 0 10px;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-btn i {
+            font-size: 1.3rem;
+        }
+
+        .google { color: #DB4437; }
+        .android { color: #3DDC84; }
+
+        .signup-link {
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .signup-link a {
+            color: var(--main-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+        }

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up for EcoWaste</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-image">
+            <a href="landingpage.html">
+                <img src="images/ecowaste_logo.png" alt="EcoWaste Logo" class="logo-img">
+            </a>
+        </div>
+    </header>
+   <div class="signup-container">
+
+    <div class="logo">
+        <i class="fas fa-recycle"></i>
+    </div>
+        
+        <h1>Get Started Now</h1>
+        
+        <form id="signup-form">
+            <div class="form-grid">
+                <div class="form-group full-name-container">
+                    <label for="full-name" class="required">Full Name</label>
+                    <input type="text" id="full-name" class="full-name-input" required
+                           placeholder="Enter Full Name" readonly
+                           onclick="toggleNameDetails()">
+                    
+                    <div class="name-details" id="name-details">
+                        <div>
+                            <label for="first-name" class="required">First Name</label>
+                            <input type="text" id="first-name" required>
+                        </div>
+                        <div>
+                            <label for="middle-name">Middle Name</label>
+                            <input type="text" id="middle-name">
+                        </div>
+                        <div>
+                            <label for="last-name" class="required">Last Name</label>
+                            <input type="text" id="last-name" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-number" class="required">Contact Number</label>
+                    <input type="tel" id="contact-number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="required">Email address</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address" class="required">Full Address</label>
+                    <input type="text" id="address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="required">Password</label>
+                    <input type="password" id="password" required minlength="8">
+                </div>
+                
+                <div class="form-group">
+                    <label for="city" class="required">City</label>
+                    <input type="text" id="city" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password" class="required">Confirm Password</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="zip-code" class="required">Zip Code</label>
+                    <input type="text" id="zip-code" required>
+                </div>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="copy-data">
+                <label for="copy-data">I agree to the <u>terms & policy</u>.</label>
+            </div>
+            
+            <button type="submit" class="signup-btn">Sign Up</button>
+            
+            <div class="divider">or</div>
+        
+        <div class="social-login">
+            <div class="social-btn google">
+                <i class="fab fa-google"></i>
+            </div>
+            <div class="social-btn facebook">
+                <i class="fab fa-facebook"></i>
+            </div>
+        </div>
+        </form>
+        
+        <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+
+    <script>
+        function toggleNameDetails() {
+            const nameDetails = document.getElementById('name-details');
+            const fullNameInput = document.querySelector('.full-name-input');
+            
+            nameDetails.classList.toggle('active');
+            
+            if (nameDetails.classList.contains('active')) {
+                fullNameInput.placeholder = "Enter Full Name";
+            } else {
+                fullNameInput.placeholder = "Enter Full Name";
+            }
+        }
+
+        // Combine name components into full name when they change
+        document.querySelectorAll('#first-name, #middle-name, #last-name').forEach(input => {
+            input.addEventListener('input', updateFullName);
+        });
+
+        function updateFullName() {
+            const firstName = document.getElementById('first-name').value;
+            const middleName = document.getElementById('middle-name').value;
+            const lastName = document.getElementById('last-name').value;
+            
+            const fullName = [firstName, middleName, lastName].filter(Boolean).join(' ');
+            document.getElementById('full-name').value = fullName;
+        }
+
+        // Form validation
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Passwords do not match!');
+                document.getElementById('confirm-password').focus();
+            }
+            
+            // Additional validation can be added here
+        });
+    </script>
+</body>
+</html>
