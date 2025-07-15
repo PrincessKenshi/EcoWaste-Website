@@ -8,8 +8,8 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #FBFFF5;
-    color: #333;
-    background-image: url(images/bg.png);
+    color: #2c2c2c;
+    background-image: url(images/bg1.png);
     background-size: cover;
     background-position: center;
 }
