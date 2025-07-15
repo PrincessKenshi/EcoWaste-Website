@@ -1,4 +1,4 @@
-:root {
+        :root {
             --main-green: #228B22;
             --dark-green: #006400;
             --light-green: #90EE90;
@@ -9,42 +9,27 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
-            background-color: var(--cream);
-            background-image: url(images/bg3.png);
             display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            overflow: hidden;
         }
 
-        .login-container {
-            background: rgba(255, 255, 255, 0.9); /* Changed from solid white */
-    backdrop-filter: blur(5px); /* Optional subtle blur effect */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Optional light border */
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 450px;
-            padding: 40px;
-            text-align: center;
+        /* Left Side - Login Form */
+        .login-form-container {
+            width: 50%;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: white;
         }
-
-        .main-header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        padding: 20px;
-        z-index: 100;
-    }
 
         .logo {
-            text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 40px;
         }
 
         .logo i {
@@ -52,25 +37,21 @@
             color: var(--main-green);
         }
 
-        .logo-image {
-            display: flex;
-            align-items: center;
-        }
-        
         .logo-img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
+        height: 100px; /* Adjust based on your logo's proportions */
+        width: auto; /* Maintain aspect ratio */
+        transition: transform 0.3s ease;
         }
 
         .logo-img:hover {
-            transform: scale(1.05);
+        transform: scale(1.05); /* Subtle hover effect */
         }
 
         h1 {
-            color: var(--dark-green);
-            font-size: 1.8rem;
+            font-size: 2rem;
+            color: #333;
             margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .subtitle {
@@ -81,39 +62,54 @@
 
         .form-group {
             margin-bottom: 20px;
-            text-align: left;
         }
-
-        .form-group input,
-.login-btn {
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly opaque white */
-}
-
-/* Enhance text contrast */
-h1, .subtitle, label {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
 
         label {
             display: block;
-            margin-bottom: 8px;
-            color: var(--dark-green);
+            color: #555;
+            font-size: 0.9rem;
             font-weight: 500;
+            margin-bottom: 8px;
         }
 
         input {
             width: 100%;
             padding: 14px 16px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
         input:focus {
             border-color: var(--main-green);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.2);
+            box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.1);
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 25px;
+        }
+
+        .forgot-password a {
+            color: #0b3088;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Header Styles */
+        .main-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 20px;
+        z-index: 100;
         }
 
         .login-btn {
@@ -122,12 +118,12 @@ h1, .subtitle, label {
             background-color: var(--main-green);
             color: white;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
+            border-radius: 6px;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
+            transition: all 0.3s;
+            margin-bottom: 25px;
         }
 
         .login-btn:hover {
@@ -138,7 +134,7 @@ h1, .subtitle, label {
         .divider {
             display: flex;
             align-items: center;
-            margin: 25px 0;
+            margin-bottom: 25px;
             color: #999;
             font-size: 0.9rem;
         }
@@ -151,59 +147,91 @@ h1, .subtitle, label {
             margin: 0 10px;
         }
 
-        .social-login {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .social-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border: 1px solid #ddd;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .social-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-btn i {
-            font-size: 1.3rem;
-        }
-
-        .google { color: #DB4437; }
-        .android { color: #3DDC84; }
-
         .signup-link {
             color: #666;
-            margin-top: 20px;
+            text-align: center;
+            font-size: 0.95rem;
         }
 
         .signup-link a {
             color: var(--main-green);
-            text-decoration: none;
             font-weight: 600;
+            text-decoration: none;
         }
 
         .signup-link a:hover {
             text-decoration: underline;
         }
 
-        @media (max-width: 480px) {
-            .login-container {
-                padding: 30px 20px;
+        /* Social Login Styles */
+        .social-login {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 25px;
+        }
+
+        .social-btn {
+        width: 100%;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid #ddd;
+        background: white;
+        }
+
+        .social-btn.google {
+        color: #e85e4b;
+        border-color: #DB4437;
+        }
+
+        .social-btn.google:hover {
+        background: rgba(219, 68, 55, 0.1);
+        }
+
+        .social-btn.facebook {
+        color: #4267B2;
+        border-color: #4267B2;
+        }
+
+        .social-btn.facebook:hover {
+        background: rgba(66, 103, 178, 0.1);
+        }
+
+        .social-btn i {
+        font-size: 1.1rem;
+        }
+
+        /* Right Side - Green Background */
+        .green-background {
+            width: 50%;
+            background-color: var(--main-green);
+            background-image: linear-gradient(135deg, var(--main-green) 0%, var(--dark-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
             }
             
-            h1 {
-                font-size: 1.5rem;
+            .login-form-container,
+            .green-background {
+                width: 100%;
+                padding: 40px 30px;
+            }
+            
+            .green-background {
+                display: none; /* Hide green background on mobile */
             }
         }
