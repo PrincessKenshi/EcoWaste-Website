@@ -216,3 +216,99 @@
                 padding: 10px 12px;
             }
         }
+
+
+
+        .social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.social-btn i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.social-btn.google {
+    background-color: #DB4437;
+    border: 1px solid #DB4437;
+}
+
+.social-btn.google:hover {
+    background-color: #c23321;
+}
+
+.social-btn.facebook {
+    background-color: #4267B2;
+    border: 1px solid #4267B2;
+}
+
+.social-btn.facebook:hover {
+    background-color: #365899;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.divider::before {
+    margin-right: 10px;
+}
+
+.divider::after {
+    margin-left: 10px;
+}
+
+
+
+.verify-instructions {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.resend-code {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.resend-code a {
+    color: var(--main-green);
+    text-decoration: none;
+}
+
+.resend-code a:hover {
+    text-decoration: underline;
+}
