@@ -16,50 +16,59 @@
             </a>
         </div>
     </header>
+    
 
-    <div class="login-form-container">
-        <div class="logo">
-            <i class="fas fa-recycle"></i>
+    <div class="login-container">
+        <div class="left-section">
+            <div class="curved-design">
+                <div class="curve curve-large"></div>
+                <div class="curve curve-medium"></div>
+                <div class="curve curve-small"></div>
+            </div>
+            <div class="content-container">
+                <h1>Welcome Back!</h1>
+                <p class="subtitle">Login to continue supporting sustainable waste donations.</p>
+                
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <div class="forgot-password">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">Login</button>
+                    
+                    <div class="divider">or</div>
+                    
+                    <div class="social-login">
+                        <button type="button" class="social-btn google">
+                            <i class="fab fa-google"></i> Continue with Google
+                        </button>
+                        <button type="button" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i> Continue with Facebook
+                        </button>
+                    </div>
+                    
+                    <p class="signup-link">Don't have an account? <a href="signup.html">Sign up</a></p>
+                </form>
+            </div>
         </div>
         
-        <h1>Welcome Back!</h1>
-        <p class="subtitle">Login to continue supporting sustainable waste donations.</p>
-        
-        <form>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
+        <div class="right-section">
+            <div class="green-curves">
+                <div class="green-curve green-curve-1"></div>
+                <div class="green-curve green-curve-2"></div>
+                <div class="green-curve green-curve-3"></div>
             </div>
-            
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
-            </div>
-            
-            <div class="forgot-password">
-                <a href="#">Forgot password?</a>
-            </div>
-            
-            <button type="submit" class="login-btn">Login</button>
-            
-            <div class="divider">or</div>
-            
-            <!-- Social Login Buttons -->
-            <div class="social-login">
-                <button type="button" class="social-btn google">
-                    <i class="fab fa-google"></i> Continue with Google
-                </button>
-                <button type="button" class="social-btn facebook">
-                    <i class="fab fa-facebook-f"></i> Continue with Facebook
-                </button>
-            </div>
-            
-            <p class="signup-link">Don't have an account? <a href="signup.html">Sign up</a></p>
-        </form>
-    </div>
-    
-    <!-- Right Side - Green Background -->
-    <div class="green-background">
+        </div>
     </div>
 </body>
 </html>
