@@ -3,9 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoWaste</title>
+    <title>Home | EcoWaste</title>
+    <link rel="stylesheet" href="assets/css/homepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
+<div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="assets/img/ecowaste_logo.png" alt="EcoWaste Logo">
+                </div>
+                <h1>EcoWaste</h1>
+            </div>
+
+             <!-- User Profile Section -->
+            <div class="user-profile" id="userProfile">
+                <div class="profile-pic">
+                    <img src="assets/img/user-avatar.jpg" alt="User Profile">
+                </div>
+                <span class="profile-name">John Doe</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                
+                <div class="profile-dropdown">
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-user"></i> My Profile
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="landingpage.html" class="dropdown-item">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </div>
+        </header>
+        
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="homepage.html" style="color: rgb(4, 144, 4);">
+                        <i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="browse.html">
+                        <i class="fas fa-search"></i>Browse</a></li>
+                    <li><a href="achievements.html">
+                        <i class="fas fa-star"></i>Achievements</a></li>
+                    <li><a href="leaderboard.html">
+                        <i class="fas fa-trophy"></i>Leaderboard</a></li>
+                    <li><a href="projects.html">
+                        <i class="fas fa-recycle"></i>Projects</a></li>
+                    <li><a href="donations.html">
+                        <i class="fas fa-box"></i>Donations</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <div class="main-content">
+            <div class="welcome-card">
+                <h2>WELCOME TO ECOWASTE</h2>
+                <div class="divider"></div>
+                <p>Join our community in making the world a cleaner place</p>
+                <div class="btn-container">
+                    <a class="btn" id="donateWasteBtn">Donate Waste</a>
+                    <a href="projects.html" class="btn">Start Recycling</a>
+                    <a href="#" class="btn" style="background-color: #666;">Learn More</a>
+                </div>
+            </div>
+
+            <div class="btn-container-a">
+                <a href="#" class="btn-a" style="color: rgb(4, 144, 4);">Donations</a>
+                <a href="#" class="btn-a">Recycled Ideas</a>
+            </div>
+            <div class="divider"></div>
+            <div id="donationPostsContainer">
+                <!-- Existing post -->
+                <div class="donation-post-item">
+                    <h3>Haur</h3>
+                    <div class="donation-details">
+                        <div><strong>Type:</strong> Plastic</div>
+                        <div><strong>Quantity:</strong> 5 kg</div>
+                    </div>
+                    <div class="btn-container">
+                        <a href="#" class="btn">Comment</a>
+                        <a href="#" class="btn">Request Donation</a>
+                    </div>
+                </div>
+                <!-- New posts will be added here dynamically -->
+            </div>
+        </div>
+        
+        <div class="right-sidebar">
+            <div class="card">
+                <h2>Recycling Progress</h2>
+                <div class="divider"></div>
+                <div class="waste-item">
+                    <ol style="margin-left: 20px;">
+                        <li><strong>Alksport</strong><br>In Progress</li>
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <li style="margin-top: 15px;"><strong>Durate</strong><br>In Progress</li>
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>Your Projects</h2>
+                <div class="divider"></div>
+                <p>No Projects for now</p>
+            </div>
+            
+            <div class="card">
+                <h2>Leaderboard</h2>
+                <div class="divider"></div>
+                <p>TOP10 USERS</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Length</th>
+                            <th>Weight</th>
+                            <th>Strength</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>4</td>
+                            <td>530</td>
+                            <td>337</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>535</td>
+                            <td>335</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>545</td>
+                            <td>254</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donation Popup Form -->
+    <div id="donationPopup" class="popup-container">
+        <div class="popup-content" id="donationFormContainer">
+            <h2>Post Donation</h2>
+            
+            <form id="donationForm">
+                <div class="form-group">
+                    <label for="wasteType">Type of Waste:</label>
+                    <select id="wasteType" name="wasteType" required>
+                        <option value="">Select waste type</option>
+                        <option value="Cans">Cans</option>
+                        <option value="Plastic Bottle">Plastic Bottle</option>
+                        <option value="Plastic">Plastic</option>
+                        <option value="Paper">Paper</option>
+                        <option value="Metal">Metal</option>
+                        <option value="Glass">Glass</option>
+                        <option value="Organic">Organic</option>
+                        <option value="Electronic">Electronic</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="text" id="quantity" name="quantity" placeholder="Enter quantity" required>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="form-group">
+                    <label>Attach Photo:</label>
+                    <div class="file-upload">
+                        <input type="file" id="photo" name="photo" accept="image/*">
+                        <label for="photo" class="file-upload-label">Choose File</label>
+                        <span id="file-chosen">No file chosen</span>
+                    </div>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <button type="submit" class="btn submit-btn">Post Donation</button>
+            </form>
+            
+            <button class="close-btn">&times;</button>
+        </div>
+
+        <!-- Success Message Popup -->
+        <div class="popup-content success-popup" id="successPopup" style="display: none;">
+            <h2>Congratulations!</h2>
+            <p>You have<br>now donated your waste. Wait<br>for others to claim yours.</p>
+            <button class="continue-btn" id="continueBtn">Continue</button>
+            <button class="close-btn">&times;</button>
+        </div>
+    </div>
+
+    <script>
+
+        // Add this JavaScript to handle the dropdown toggle
+        document.getElementById('userProfile').addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const userProfile = document.getElementById('userProfile');
+            if (!userProfile.contains(event.target)) {
+                userProfile.classList.remove('active');
+            }
+        });
+
+        // Store donations data
+        let donations = [];
+        
+        // Show popup when Donate Waste button is clicked
+        document.getElementById('donateWasteBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('donationPopup').style.display = 'flex';
+            document.getElementById('donationFormContainer').style.display = 'block';
+            document.getElementById('successPopup').style.display = 'none';
+        });
+
+        // Close popup when close button is clicked
+        document.querySelectorAll('.close-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.getElementById('donationPopup').style.display = 'none';
+            });
+        });
+
+        // Close popup when clicking outside the form
+        document.getElementById('donationPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+
+        // Update file chosen text
+        document.getElementById('photo').addEventListener('change', function() {
+            const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+            document.getElementById('file-chosen').textContent = fileName;
+        });
+
+        // Form submission - show success message
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const wasteType = document.getElementById('wasteType').value;
+            const quantity = document.getElementById('quantity').value;
+            const photoFile = document.getElementById('photo').files[0];
+            
+            // Create a new donation object
+            const newDonation = {
+                id: Date.now(), // Unique ID
+                wasteType: wasteType,
+                quantity: quantity,
+                photo: photoFile ? URL.createObjectURL(photoFile) : null,
+                timestamp: new Date().toLocaleString()
+            };
+            
+            // Add to donations array
+            donations.push(newDonation);
+            
+            // Hide form and show success message
+            document.getElementById('donationFormContainer').style.display = 'none';
+            document.getElementById('successPopup').style.display = 'block';
+        });
+
+        // Continue button in success message
+        document.getElementById('continueBtn').addEventListener('click', function() {
+            // Close popup
+            document.getElementById('donationPopup').style.display = 'none';
+            
+            // Reset form
+            document.getElementById('donationForm').reset();
+            document.getElementById('file-chosen').textContent = 'No file chosen';
+            
+            // Add the new donation to the page
+            renderLatestDonation();
+        });
+
+        // Function to render the latest donation
+        function renderLatestDonation() {
+            if (donations.length === 0) return;
+            
+            const latestDonation = donations[donations.length - 1];
+            const postsContainer = document.getElementById('donationPostsContainer');
+            
+            // Create new post element
+            const postElement = document.createElement('div');
+            postElement.className = 'donation-post-item';
+            postElement.innerHTML = `
+                <h3>New Donation</h3>
+                <div class="donation-details">
+                    <div><strong>Type:</strong> ${latestDonation.wasteType}</div>
+                    <div><strong>Quantity:</strong> ${latestDonation.quantity}</div>
+                </div>
+                ${latestDonation.photo ? `<img src="${latestDonation.photo}" alt="Donation photo" class="donation-image">` : ''}
+                <div class="btn-container">
+                    <a href="#" class="btn">Comment</a>
+                    <a href="#" class="btn">Request Donation</a>
+                </div>
+            `;
+            
+            // Insert new post at the top of the container
+            postsContainer.insertBefore(postElement, postsContainer.firstChild);
+        }
+    </script>
 </body>
 </html>
