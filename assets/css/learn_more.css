@@ -50,27 +50,7 @@
             height: 50px;
         }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .start-recycling-btn {
-            padding: 8px 16px;
-            background-color: #2e8b57;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .start-recycling-btn:hover {
-            background-color: #3cb371;
-        }
-
+          /* Add these new styles for the user profile */
         .user-profile {
             display: flex;
             align-items: center;
@@ -191,102 +171,12 @@
             font-size: 18px;
         }
         
-        .main-content {
-            grid-column: 2;
-            padding: 20px 0;
-        }
-
-        .page-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .page-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .projects-filter {
-            display: flex;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .filter-tab {
-            flex: 1;
-            text-align: center;
-            padding: 12px;
-            cursor: pointer;
-            font-weight: 500;
-            color: #666;
-            transition: all 0.3s;
-            border-bottom: 3px solid transparent;
-        }
-
-        .filter-tab:hover {
-            color: #82AA52;
-            background-color: #f9f9f9;
-        }
-
-        .filter-tab.active {
-            color: #82AA52;
-            font-weight: 600;
-            border-bottom: 3px solid #82AA52;
-            background-color: #f5f9f2;
-        }
-
-        .projects-container {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 20px;
-            min-height: 300px;
-        }
-
-        .empty-state {
+        .right-sidebar {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 300px;
-            color: #666;
+            gap: 20px;
         }
-
-        .empty-state i {
-            font-size: 48px;
-            color: #82AA52;
-            margin-bottom: 15px;
-        }
-
-        .empty-state p {
-            margin-bottom: 20px;
-        }
-
-        .action-buttons {
-            display: flex;
-            justify-content: flex-end;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .action-btn {
-            background: none;
-            border: none;
-            color: #82AA52;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 8px 0;
-        }
-
-        .action-btn:hover {
-            text-decoration: underline;
-        }
+        
 
         /* feedback system */
         .feedback-btn {
@@ -352,6 +242,7 @@
         .feedback-form h3 {
             color: #82AA52;
             margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .emoji-rating {
@@ -404,6 +295,7 @@
             resize: vertical;
             min-height: 150px;
             margin-bottom: 20px;
+            font-family: 'Open Sans', sans-serif;
         }
         
         .feedback-submit-btn {

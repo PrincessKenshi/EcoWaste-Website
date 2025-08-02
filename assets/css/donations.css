@@ -1,4 +1,4 @@
-        * {
+ * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -15,7 +15,7 @@
             margin: 0 auto;
             display: grid;
             max-width: 1200px;
-            grid-template-columns: 250px 1fr 300px;
+            grid-template-columns: 250px 1fr;
             gap: 20px;
         }
         
@@ -50,7 +50,6 @@
             height: 50px;
         }
 
-          /* Add these new styles for the user profile */
         .user-profile {
             display: flex;
             align-items: center;
@@ -134,7 +133,7 @@
         .sidebar {
             background-color: #F6FFEB;
             border-radius: 2px;
-            padding: 50px;
+            padding: 20px;
             margin-top: -10px;
             position: relative;
             top: -10px;
@@ -158,7 +157,6 @@
             transition: all 0.3s ease;
         }
 
-        
         .sidebar nav a:hover {
             color: #2e8b57;
             transform: translateX(5px);
@@ -171,13 +169,129 @@
             font-size: 18px;
         }
         
-        .right-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .main-content {
+            grid-column: 2;
+            padding: 20px 0;
         }
-        
-                /* feedback system */
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Tabs */
+        .tabs-container {
+            margin-bottom: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab-btn:hover {
+            color: #2e8b57;
+        }
+
+        .tab-btn-active {
+            color: #2e8b57;
+            border-bottom: 3px solid #2e8b57;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-active {
+            display: block;
+        }
+
+        /* Donation Cards */
+        .donation-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #82AA52;
+        }
+
+        .donation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .donation-title {
+            font-weight: 600;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .donation-status {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: white;
+        }
+
+        .status-completed {
+            background-color: #82AA52;
+        }
+
+        .status-pending {
+            background-color: #F59E0B;
+        }
+
+        .status-received {
+            background-color: #3B82F6;
+        }
+
+        .donation-details {
+            margin-bottom: 15px;
+        }
+
+        .donation-detail {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .view-details {
+            color: #2e8b57;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            padding: 6px 12px;
+            border: 1px solid #2e8b57;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .view-details:hover {
+            background-color: #f0f7e8;
+        }
+
+        /* feedback system */
         .feedback-btn {
             position: fixed;
             bottom: 30px;

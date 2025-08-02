@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | EcoWaste</title>
-    <link rel="stylesheet" href="assets/css/projects.css">
+    <title>Start Project | EcoWaste</title>
+    <link rel="stylesheet" href="assets/css/start_project.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
+<div class="container">
         <header>
             <div class="logo-container">
                 <div class="logo">
@@ -18,6 +18,7 @@
                 <h1>EcoWaste</h1>
             </div>
 
+            <!-- User Profile Section -->
             <div class="user-profile" id="userProfile">
                 <div class="profile-pic">
                     <img src="assets/img/user-avatar.jpg" alt="User Profile">
@@ -43,38 +44,59 @@
         <aside class="sidebar">
             <nav>
                 <ul>
-                    <li><a href="homepage.html"><i class="fas fa-home"></i>Home</a></li>
-                    <li><a href="browse.html"><i class="fas fa-search"></i>Browse</a></li>
-                    <li><a href="achievements.html"><i class="fas fa-star"></i>Achievements</a></li>
-                    <li><a href="leaderboard.html"><i class="fas fa-trophy"></i>Leaderboard</a></li>
-                    <li><a href="projects.html" style="color: #2e8b57;"><i class="fas fa-recycle"></i>Projects</a></li>
-                    <li><a href="donations.html"><i class="fas fa-box"></i>Donations</a></li>
+                    <li><a href="homepage.html">
+                        <i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="browse.html">
+                        <i class="fas fa-search"></i>Browse</a></li>
+                    <li><a href="achievements.html">
+                        <i class="fas fa-star"></i>Achievements</a></li>
+                    <li><a href="leaderboard.html">
+                        <i class="fas fa-trophy"></i>Leaderboard</a></li>
+                    <li><a href="projects.html" style="color: rgb(4, 144, 4);">
+                        <i class="fas fa-recycle"></i>Projects</a></li>
+                    <li><a href="donations.html">
+                        <i class="fas fa-box"></i>Donations</a></li>
                 </ul>
             </nav>
         </aside>
 
+        <!-- Main Content Area -->
         <main class="main-content">
-            <div class="page-header">
-                <h2 class="page-title">My Recycling Projects</h2>
-                <buttona href="start-project.html" class="start-recycling-btn">Start Recycling</a></button>
+            <div class="back-button-container">
+                <a href="projects.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
             </div>
+            <h2 class="page-header">Start a Recycling Project</h2>
             
-            <div class="projects-filter">
-                <div class="filter-tab active" data-filter="all">All Projects</div>
-                <div class="filter-tab" data-filter="in-progress">In Progress</div>
-                <div class="filter-tab" data-filter="completed">Completed</div>
-            </div>
-            
-            <div class="projects-container">
-                <div class="empty-state">
-                    <i class="fas fa-recycle"></i>
-                    <p>No projects yet</p>
+            <div class="project-form">
+                <div class="form-group">
+                    <label for="project-name">Project Name:</label>
+                    <input type="text" id="project-name" placeholder="Enter project name (e.g. Plastic Bottle Vase)">
                 </div>
-            </div>
-            
-            <div class="action-buttons">
-                <button class="action-btn">View Details</button>
-                <button class="action-btn">Share</button>
+                
+                <div class="form-group">
+                    <label for="project-description">Description:</label>
+                    <textarea id="project-description" placeholder="Describe your project"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Materials Needed</label>
+                    <div class="materials-list" id="materials-list">
+                        <div class="material-item">
+                            <input type="text" placeholder="Type of material">
+                            <input type="number" placeholder="Quantity" min="1">
+                        </div>
+                    </div>
+                    <button type="button" class="add-material" id="add-material">
+                        <i class="fas fa-plus"></i> Add Another Material
+                    </button>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary">Cancel</button>
+                    <button type="button" class="btn btn-primary">Proceed</button>
+                </div>
             </div>
         </main>
     </div>
@@ -134,7 +156,7 @@
     </div>
 
     <script>
-        // User profile dropdown
+        // Add this JavaScript to handle the dropdown toggle
         document.getElementById('userProfile').addEventListener('click', function() {
             this.classList.toggle('active');
         });
@@ -147,21 +169,27 @@
             }
         });
 
-        // Projects filter tabs
-        const filterTabs = document.querySelectorAll('.filter-tab');
-        filterTabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                filterTabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Here you would filter projects based on the data-filter attribute
-                const filter = this.getAttribute('data-filter');
-                console.log(`Filtering by: ${filter}`);
-                // Implement your actual filtering logic here
+        // Add material field functionality
+        document.getElementById('add-material').addEventListener('click', function() {
+            const materialsList = document.getElementById('materials-list');
+            const newMaterial = document.createElement('div');
+            newMaterial.className = 'material-item';
+            newMaterial.innerHTML = `
+                <input type="text" placeholder="Type of material">
+                <input type="number" placeholder="Quantity" min="1">
+                <button type="button" class="btn btn-secondary remove-material" style="padding: 5px 10px; font-size: 12px;">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            materialsList.appendChild(newMaterial);
+            
+            // Add event listener to new remove button
+            newMaterial.querySelector('.remove-material').addEventListener('click', function() {
+                materialsList.removeChild(newMaterial);
             });
         });
 
-        // Feedback system
+        // Feedback system JavaScript
         document.addEventListener('DOMContentLoaded', function() {
             const feedbackBtn = document.getElementById('feedbackBtn');
             const feedbackModal = document.getElementById('feedbackModal');
@@ -214,7 +242,7 @@
                 feedbackSubmitBtn.disabled = true;
                 spinner.style.display = 'block';
                 
-                // Simulate API call
+                // Simulate API call (replace with actual fetch/AJAX call)
                 setTimeout(() => {
                     // Hide spinner
                     spinner.style.display = 'none';

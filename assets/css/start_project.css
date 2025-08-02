@@ -15,7 +15,7 @@
             margin: 0 auto;
             display: grid;
             max-width: 1200px;
-            grid-template-columns: 250px 1fr 300px;
+            grid-template-columns: 250px 1fr;
             gap: 20px;
         }
         
@@ -50,27 +50,7 @@
             height: 50px;
         }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .start-recycling-btn {
-            padding: 8px 16px;
-            background-color: #2e8b57;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .start-recycling-btn:hover {
-            background-color: #3cb371;
-        }
-
+        /* User Profile Section */
         .user-profile {
             display: flex;
             align-items: center;
@@ -154,7 +134,7 @@
         .sidebar {
             background-color: #F6FFEB;
             border-radius: 2px;
-            padding: 50px;
+            padding: 50px 20px;
             margin-top: -10px;
             position: relative;
             top: -10px;
@@ -178,7 +158,6 @@
             transition: all 0.3s ease;
         }
 
-        
         .sidebar nav a:hover {
             color: #2e8b57;
             transform: translateX(5px);
@@ -191,104 +170,149 @@
             font-size: 18px;
         }
         
+        /* Main Content Styles */
         .main-content {
-            grid-column: 2;
-            padding: 20px 0;
-        }
-
-        .page-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .page-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .projects-filter {
-            display: flex;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .filter-tab {
-            flex: 1;
-            text-align: center;
-            padding: 12px;
-            cursor: pointer;
-            font-weight: 500;
-            color: #666;
-            transition: all 0.3s;
-            border-bottom: 3px solid transparent;
-        }
-
-        .filter-tab:hover {
-            color: #82AA52;
-            background-color: #f9f9f9;
-        }
-
-        .filter-tab.active {
-            color: #82AA52;
-            font-weight: 600;
-            border-bottom: 3px solid #82AA52;
-            background-color: #f5f9f2;
-        }
-
-        .projects-container {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             padding: 20px;
-            min-height: 300px;
+            margin-top: 20px;
         }
-
-        .empty-state {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 300px;
-            color: #666;
-        }
-
-        .empty-state i {
-            font-size: 48px;
-            color: #82AA52;
-            margin-bottom: 15px;
-        }
-
-        .empty-state p {
+        
+        /* Back Button */
+        .back-button-container {
             margin-bottom: 20px;
         }
 
-        .action-buttons {
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #e8f5e9;
+            transform: translateX(-3px);
+        }
+
+        .back-button i {
+            font-size: 0.9em;
+        }
+        
+        .page-header {
+            color: #2e7d32;
+            margin-bottom: 30px;
+        }
+        
+        .project-form {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2e7d32;
+        }
+        
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .materials-list {
+            margin-top: 20px;
+        }
+        
+        .material-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        
+        .material-item input[type="text"] {
+            flex: 2;
+        }
+        
+        .material-item input[type="number"] {
+            flex: 1;
+            max-width: 100px;
+        }
+        
+        .add-material {
+            color: #2e7d32;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        
+        .add-material i {
+            font-size: 1.2em;
+        }
+        
+        .form-actions {
             display: flex;
             justify-content: flex-end;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 30px;
         }
-
-        .action-btn {
-            background: none;
-            border: none;
-            color: #82AA52;
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 4px;
             font-weight: 600;
             cursor: pointer;
-            padding: 8px 0;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #388e3c;
+        }
+        
+        .btn-secondary {
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e0e0e0;
         }
 
-        .action-btn:hover {
-            text-decoration: underline;
-        }
-
-        /* feedback system */
+        /* Feedback System */
         .feedback-btn {
             position: fixed;
             bottom: 30px;
@@ -352,6 +376,7 @@
         .feedback-form h3 {
             color: #82AA52;
             margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .emoji-rating {
@@ -404,6 +429,7 @@
             resize: vertical;
             min-height: 150px;
             margin-bottom: 20px;
+            font-family: 'Open Sans', sans-serif;
         }
         
         .feedback-submit-btn {
