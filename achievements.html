@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse | EcoWaste</title>
+    <title>Achievements | EcoWaste</title>
     <link rel="stylesheet" href="assets/css/achievement.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -59,7 +59,195 @@
                 </ul>
             </nav>
         </aside>
+
+        <main class="main-content">
+            <div class="achievements-header">
+                <h2>My Achievements</h2>
+                <p class="subtitle">Track your eco-friendly progress and accomplishments</p>
+            </div>
+
+            <div class="achievements-content">
+                <!-- Level Section -->
+<div class="level-card">
+    <div class="circular-progress">
+        <div class="circle">
+            <div class="circle-inner">
+                <div class="level-number">5</div>
+                <div class="level-label">LEVEL</div>
+            </div>
+        </div>
+        <svg class="progress-ring" width="200" height="200">
+            <circle class="progress-ring-circle" stroke="#82AA52" stroke-width="8" fill="transparent" r="80" cx="100" cy="100"/>
+            <circle class="progress-ring-progress" stroke="#82AA52" stroke-width="8" stroke-dasharray="502" stroke-dashoffset="251" fill="transparent" r="80" cx="100" cy="100"/>
+        </svg>
     </div>
+    <div class="progress-text">15/25 pts</div>
+</div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Achievements Earned</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Badges Earned</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30</div>
+                        <div class="stat-label">Total Items Donated</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">26</div>
+                        <div class="stat-label">Total Items Recycled</div>
+                    </div>
+                </div>
+
+                <!-- Tasks Section -->
+ <div class="tasks-section">
+    <div class="tasks-header">
+        <h3>My Tasks</h3>
+        <button class="redeem-btn">Redeem Rewards</button>
+    </div>
+    <p class="tasks-subtitle">Complete all tasks to earn more badges and points!</p>
+    
+    <div class="task-list">
+        <!-- Completed Task -->
+        <div class="task-item completed">
+            <div class="task-main">
+                <div class="task-info">
+                    <h4>Eco Beginner</h4>
+                    <p>Complete your first recycling project</p>
+                </div>
+                <div class="task-status">
+                    <span class="status-badge">Completed</span>
+                </div>
+            </div>
+            <div class="task-rewards">
+                <div class="reward-amount">
+                    <i class="fas fa-coins reward-icon"></i>
+                    <span>Earned 50 EcoPoints</span>
+                </div>
+                <div class="task-progress completed">1/1</div>
+            </div>
+        </div>
+        
+        <!-- Completed Task -->
+        <div class="task-item completed">
+            <div class="task-main">
+                <div class="task-info">
+                    <h4>Plastic Crusher</h4>
+                    <p>Recycle 10 plastic items</p>
+                </div>
+                <div class="task-status">
+                    <span class="status-badge">Completed</span>
+                </div>
+            </div>
+            <div class="task-rewards">
+                <div class="reward-amount">
+                    <i class="fas fa-medal reward-icon"></i>
+                    <span>Plastic Crusher Badge</span>
+                </div>
+                <div class="task-progress completed">10/10</div>
+            </div>
+        </div>
+        
+        <!-- In Progress Task -->
+        <div class="task-item in-progress">
+            <div class="task-main">
+                <div class="task-info">
+                    <h4>Eco Warrior</h4>
+                    <p>Complete multiple recycling projects</p>
+                </div>
+                <div class="task-status">
+                    <span class="status-badge">In Progress</span>
+                </div>
+            </div>
+            <div class="task-rewards">
+                <div class="reward-amount">
+                    <i class="fas fa-coins reward-icon"></i>
+                    <span>Earned 75 EcoPoints</span>
+                </div>
+                <div class="task-progress">5/10</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Rewards Section (initially hidden) -->
+<div class="rewards-section" id="rewardsSection">
+    <div class="rewards-header">
+        <button class="back-btn" id="backToTasks">
+            <i class="fas fa-arrow-left"></i> Back to Tasks
+        </button>
+        <h3>Available Rewards</h3>
+    </div>
+    
+    <p class="rewards-subtitle">Redeem your eco-points for exciting rewards!</p>
+    
+    <div class="points-balance">
+        <i class="fas fa-coins"></i>
+        <span>Your Total Reward Points: <strong>775 points</strong></span>
+    </div>
+    
+    <div class="reward-cards">
+        <!-- McDonald's Reward -->
+        <div class="reward-card">
+            <div class="reward-content">
+                <h4>McDonald's Meal Discount</h4>
+                <p>Get 20% off any meal combo at McDonald's. Valid for 30 days after redemption.</p>
+            </div>
+            <div class="reward-action">
+                <div class="reward-points">350 pts</div>
+                <button class="redeem-now-btn">Redeem</button>
+            </div>
+        </div>
+        
+        <!-- Jollibee Reward -->
+        <div class="reward-card">
+            <div class="reward-content">
+                <h4>Jollibee Free Sundae</h4>
+                <p>Free regular sundae with any purchase at Jollibee. Valid for 30 days.</p>
+            </div>
+            <div class="reward-action">
+                <div class="reward-points">150 pts</div>
+                <button class="redeem-now-btn">Redeem</button>
+            </div>
+        </div>
+        
+        <!-- Additional rewards would go here -->
+    </div>
+</div>
+
+<!-- Reward Redemption Confirmation (initially hidden) -->
+<div class="redemption-confirmation" id="redemptionConfirmation">
+    <div class="confirmation-header">
+        <button class="back-btn" id="backToRewards">
+            <i class="fas fa-arrow-left"></i> Back to Rewards
+        </button>
+        <h3>Redeem Reward</h3>
+    </div>
+    
+    <div class="reward-details">
+        <h4>McDonald's Meal Discount</h4>
+        <p class="reward-id">ID: MCD-20-3A5B7C9D</p>
+    </div>
+    
+    <div class="qr-instructions">
+        <p>Scan this QR in any branch of McDonald's</p>
+        <div class="qr-code-placeholder">
+            <!-- Replace with actual QR code image or generator -->
+            <img src="assets/img/qr-placeholder.png" alt="QR Code">
+        </div>
+    </div>
+    
+    <button class="done-btn">Done</button>
+</div>
 
     <!-- Feedback Button -->
     <div class="feedback-btn" id="feedbackBtn">💬</div>
@@ -115,122 +303,49 @@
         </div>
     </div>
 
-<script>
-     
-        // Add this JavaScript to handle the dropdown toggle
-        document.getElementById('userProfile').addEventListener('click', function() {
-            this.classList.toggle('active');
-        });
+    <script>
+        // Handle Rewards Section Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const redeemBtn = document.querySelector('.redeem-btn');
+    const rewardsSection = document.getElementById('rewardsSection');
+    const backToTasksBtn = document.getElementById('backToTasks');
+    const tasksSection = document.querySelector('.tasks-section');
+    const redemptionConfirmation = document.getElementById('redemptionConfirmation');
+    const backToRewardsBtn = document.getElementById('backToRewards');
+    const doneBtn = document.querySelector('.done-btn');
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            const userProfile = document.getElementById('userProfile');
-            if (!userProfile.contains(event.target)) {
-                userProfile.classList.remove('active');
-            }
-        });
+    redeemBtn.addEventListener('click', function() {
+        tasksSection.style.display = 'none';
+        rewardsSection.style.display = 'block';
+    });
 
-        // Feedback system JavaScript
-        document.addEventListener('DOMContentLoaded', function() {
-            const feedbackBtn = document.getElementById('feedbackBtn');
-            const feedbackModal = document.getElementById('feedbackModal');
-            const feedbackCloseBtn = document.getElementById('feedbackCloseBtn');
-            const emojiOptions = document.querySelectorAll('.emoji-option');
-            const feedbackForm = document.getElementById('feedbackForm');
-            const thankYouMessage = document.getElementById('thankYouMessage');
-            const feedbackSubmitBtn = document.getElementById('feedbackSubmitBtn');
-            const spinner = document.getElementById('spinner');
-            const ratingError = document.getElementById('ratingError');
-            const textError = document.getElementById('textError');
-            const feedbackText = document.getElementById('feedbackText');
-            
-            let selectedRating = 0;
-            
-            // Emoji selection
-            emojiOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    emojiOptions.forEach(opt => opt.classList.remove('selected'));
-                    option.classList.add('selected');
-                    selectedRating = option.getAttribute('data-rating');
-                    ratingError.style.display = 'none';
-                });
-            });
-            
-            // Form submission
-            feedbackForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Validate form
-                let isValid = true;
-                
-                if (selectedRating === 0) {
-                    ratingError.style.display = 'block';
-                    isValid = false;
-                } else {
-                    ratingError.style.display = 'none';
-                }
-                
-                if (feedbackText.value.trim() === '') {
-                    textError.style.display = 'block';
-                    isValid = false;
-                } else {
-                    textError.style.display = 'none';
-                }
-                
-                if (!isValid) return;
-                
-                // Show loading spinner
-                feedbackSubmitBtn.disabled = true;
-                spinner.style.display = 'block';
-                
-                // Simulate API call (replace with actual fetch/AJAX call)
-                setTimeout(() => {
-                    // Hide spinner
-                    spinner.style.display = 'none';
-                    
-                    // Show thank you message
-                    feedbackForm.style.display = 'none';
-                    thankYouMessage.style.display = 'block';
-                    
-                    // Reset form after delay
-                    setTimeout(() => {
-                        feedbackModal.style.display = 'none';
-                        feedbackForm.style.display = 'block';
-                        thankYouMessage.style.display = 'none';
-                        feedbackText.value = '';
-                        emojiOptions.forEach(opt => opt.classList.remove('selected'));
-                        selectedRating = 0;
-                        feedbackSubmitBtn.disabled = false;
-                    }, 3000);
-                }, 1500);
-            });
-            
-            // Open/close feedback modal
-            feedbackBtn.addEventListener('click', () => {
-                feedbackModal.style.display = 'flex';
-            });
-            
-            feedbackCloseBtn.addEventListener('click', closeFeedbackModal);
-            
-            window.addEventListener('click', (event) => {
-                if (event.target === feedbackModal) {
-                    closeFeedbackModal();
-                }
-            });
-            
-            function closeFeedbackModal() {
-                feedbackModal.style.display = 'none';
-                feedbackForm.style.display = 'block';
-                thankYouMessage.style.display = 'none';
-                feedbackText.value = '';
-                emojiOptions.forEach(opt => opt.classList.remove('selected'));
-                selectedRating = 0;
-                ratingError.style.display = 'none';
-                textError.style.display = 'none';
-                feedbackSubmitBtn.disabled = false;
-                spinner.style.display = 'none';
-            }
+    backToTasksBtn.addEventListener('click', function() {
+        rewardsSection.style.display = 'none';
+        tasksSection.style.display = 'block';
+    });
+
+    // Add event listeners for redeem buttons
+    document.querySelectorAll('.redeem-now-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+                        rewardsSection.style.display = 'none';
+            redemptionConfirmation.style.display = 'block';
         });
-</script>
+    });
+
+    backToRewardsBtn.addEventListener('click', function() {
+        redemptionConfirmation.style.display = 'none';
+        rewardsSection.style.display = 'block';
+    });
+
+    doneBtn.addEventListener('click', function() {
+        redemptionConfirmation.style.display = 'none';
+        document.querySelector('.tasks-section').style.display = 'block';
+    });
+    
+});
+
+
+    </script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<div class="container">
+    <div class="container">
         <header>
             <div class="logo-container">
                 <div class="logo">
@@ -18,7 +18,6 @@
                 <h1>EcoWaste</h1>
             </div>
 
-             <!-- User Profile Section -->
             <div class="user-profile" id="userProfile">
                 <div class="profile-pic">
                     <img src="assets/img/user-avatar.jpg" alt="User Profile">
@@ -59,8 +58,9 @@
                 </ul>
             </nav>
         </aside>
-        
-        <div class="main-content">
+
+        <main class="main-content">
+            <!-- Welcome Card -->
             <div class="welcome-card">
                 <h2>WELCOME TO ECOWASTE</h2>
                 <div class="divider"></div>
@@ -72,46 +72,53 @@
                 </div>
             </div>
 
-            <div class="btn-container-a">
-                <a href="#" class="btn-a" style="color: rgb(4, 144, 4);">Donations</a>
-                <a href="#" class="btn-a">Recycled Ideas</a>
+            <!-- Tab Navigation -->
+            <div class="tab-container">
+                <button class="tab-btn active" onclick="openTab('donations')">Donations</button>
+                <button class="tab-btn" onclick="openTab('recycled-ideas')">Recycled Ideas</button>
             </div>
             <div class="divider"></div>
-            <div id="donationPostsContainer">
-                <!-- Existing post -->
-                <div class="donation-post-item">
-                    <h3>Haur</h3>
-                    <div class="donation-details">
-                        <div><strong>Type:</strong> Plastic</div>
-                        <div><strong>Quantity:</strong> 5 kg</div>
-                    </div>
-                    <div class="btn-container">
-                        <a href="#" class="btn">Comment</a>
-                        <a href="#" class="btn">Request Donation</a>
+
+            <!-- Donations Tab Content -->
+            <div id="donations" class="tab-content" style="display: block;">
+                <!-- Available Donations -->
+                <div class="section-card">
+                    <h3>Available</h3>
+                    <div class="donation-item">
+                        <div class="donation-info">
+                            <h4>Yeager</h4>
+                            <p>Category: Cars</p>
+                            <p class="time-ago">1 day ago</p>
+                        </div>
+                        <div class="donation-action">
+                            <div class="quantity">Quantity [E413]</div>
+                            <button class="action-btn">Request Donation</button>
+                        </div>
                     </div>
                 </div>
-                <!-- New posts will be added here dynamically -->
             </div>
-        </div>
-        
+
+            <!-- Recycled Ideas Tab Content -->
+            <div id="recycled-ideas" class="tab-content">
+                <!-- Plastic Planters Idea -->
+                <div class="idea-card">
+                    <div class="idea-header">
+                        <h3>Plastic Planters</h3>
+                        <div class="idea-meta">
+                            <span class="author">Sasha</span>
+                            <span class="time-ago">2 weeks ago</span>
+                        </div>
+                    </div>
+                    <p class="idea-description">Cute Recycled Plant base using Plastic Bottles</p>
+                    <div class="idea-actions">
+                        <button class="action-btn">Try This Idea</button>
+                        <span class="comments">24 Comments</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
         <div class="right-sidebar">
-            <div class="card">
-                <h2>Recycling Progress</h2>
-                <div class="divider"></div>
-                <div class="waste-item">
-                    <ol style="margin-left: 20px;">
-                        <li><strong>Alksport</strong><br>In Progress</li>
-                        <div class="progress-bar">
-                            <div class="progress"></div>
-                        </div>
-                        <li style="margin-top: 15px;"><strong>Durate</strong><br>In Progress</li>
-                        <div class="progress-bar">
-                            <div class="progress"></div>
-                        </div>
-                    </ol>
-                </div>
-            </div>
-            
             <div class="card">
                 <h2>Your Projects</h2>
                 <div class="divider"></div>
@@ -119,35 +126,95 @@
             </div>
             
             <div class="card">
-                <h2>Leaderboard</h2>
+                <h2>Quick Stats</h2>
                 <div class="divider"></div>
-                <p>TOP10 USERS</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Length</th>
-                            <th>Weight</th>
-                            <th>Strength</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>4</td>
-                            <td>530</td>
-                            <td>337</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>535</td>
-                            <td>335</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>545</td>
-                            <td>254</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="stat-item">
+                    <div class="stat-label">Items Recycled</div>
+                    <div class="stat-value">26</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Items Donated</div>
+                    <div class="stat-value">30</div>
+                </div>
+            </div>
+
+            <!-- Moved Recycling Progress -->
+            <div class="card">
+                <h3>Recycling Progress</h3>
+                <div class="divider"></div>
+                <div class="progress-item">
+                    <div class="progress-info">
+                        <span class="rank">1</span>
+                        <span class="name">Abilject</span>
+                        <span class="status">In Progress</span>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-info">
+                        <span class="rank">2</span>
+                        <span class="name">Drizzle</span>
+                        <span class="status">In Progress</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Moved Leaderboard -->
+            <div class="card">
+                <h3>Leaderboard</h3>
+                <div class="divider"></div>
+                <div class="leaderboard-header">
+                    <span>TOP 10 USERS</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">1</span>
+                    <span class="name">Lemma</span>
+                    <span class="points">500 pts</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">2</span>
+                    <span class="name">Woburni Shiraji</span>
+                    <span class="points">300 pts</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">3</span>
+                    <span class="name">Shangzhan</span>
+                    <span class="points">0.1%</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">4</span>
+                    <span class="name">Abshjeet</span>
+                    <span class="points">337 pts</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">5</span>
+                    <span class="name">Sarah</span>
+                    <span class="points">325 pts</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">6</span>
+                    <span class="name">Nerdstein</span>
+                    <span class="points">284 pts</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">7</span>
+                    <span class="name">Seniors</span>
+                    <span class="points">239 pts</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">8</span>
+                    <span class="name">James</span>
+                    <span class="points">218 pts</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">9</span>
+                    <span class="name">Charlie</span>
+                    <span class="points">188 pts</span>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">10</span>
+                    <span class="name">Jason</span>
+                    <span class="points">158 pts</span>
+                </div>
             </div>
         </div>
     </div>
@@ -261,8 +328,7 @@
     </div>
 
     <script>
-        
-        // Add this JavaScript to handle the dropdown toggle
+        // User Profile Dropdown
         document.getElementById('userProfile').addEventListener('click', function() {
             this.classList.toggle('active');
         });
@@ -275,10 +341,32 @@
             }
         });
 
-        // Store donations data
-        let donations = [];
-        
-        // Show popup when Donate Waste button is clicked
+        // Tab Functionality
+        function openTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
+            }
+            
+            // Remove active class from all tab buttons
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            // Show the current tab and add active class to the button
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.classList.add("active");
+        }
+
+        // Initialize the first tab as active
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.tab-btn').classList.add('active');
+            document.getElementById('donations').style.display = 'block';
+        });
+
+        // Donation Popup Functionality
         document.getElementById('donateWasteBtn').addEventListener('click', function(e) {
             e.preventDefault();
             document.getElementById('donationPopup').style.display = 'flex';
@@ -315,17 +403,8 @@
             const quantity = document.getElementById('quantity').value;
             const photoFile = document.getElementById('photo').files[0];
             
-            // Create a new donation object
-            const newDonation = {
-                id: Date.now(), // Unique ID
-                wasteType: wasteType,
-                quantity: quantity,
-                photo: photoFile ? URL.createObjectURL(photoFile) : null,
-                timestamp: new Date().toLocaleString()
-            };
-            
-            // Add to donations array
-            donations.push(newDonation);
+            // Here you would typically send this data to a server
+            // For now, we'll just show the success message
             
             // Hide form and show success message
             document.getElementById('donationFormContainer').style.display = 'none';
@@ -340,38 +419,7 @@
             // Reset form
             document.getElementById('donationForm').reset();
             document.getElementById('file-chosen').textContent = 'No file chosen';
-            
-            // Add the new donation to the page
-            renderLatestDonation();
         });
-
-        // Function to render the latest donation
-        function renderLatestDonation() {
-            if (donations.length === 0) return;
-            
-            const latestDonation = donations[donations.length - 1];
-            const postsContainer = document.getElementById('donationPostsContainer');
-            
-            // Create new post element
-            const postElement = document.createElement('div');
-            postElement.className = 'donation-post-item';
-            postElement.innerHTML = `
-                <h3>New Donation</h3>
-                <div class="donation-details">
-                    <div><strong>Type:</strong> ${latestDonation.wasteType}</div>
-                    <div><strong>Quantity:</strong> ${latestDonation.quantity}</div>
-                </div>
-                ${latestDonation.photo ? `<img src="${latestDonation.photo}" alt="Donation photo" class="donation-image">` : ''}
-                <div class="btn-container">
-                    <a href="#" class="btn">Comment</a>
-                    <a href="#" class="btn">Request Donation</a>
-                </div>
-            `;
-            
-            // Insert new post at the top of the container
-            postsContainer.insertBefore(postElement, postsContainer.firstChild);
-        }
-
 
         // Feedback system JavaScript
         document.addEventListener('DOMContentLoaded', function() {
