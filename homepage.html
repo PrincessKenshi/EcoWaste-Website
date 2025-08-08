@@ -66,7 +66,7 @@
                 <div class="divider"></div>
                 <p>Join our community in making the world a cleaner place</p>
                 <div class="btn-container">
-                    <a class="btn" id="donateWasteBtn">Donate Waste</a>
+                    <a href="#" class="btn" id="donateWasteBtn">Donate Waste</a>
                     <a href="start-project.html" class="btn">Start Recycling</a>
                     <a href="learn_more.html" class="btn" style="background-color: #666;">Learn More</a>
                 </div>
@@ -84,16 +84,20 @@
                 <!-- Available Donations -->
                 <div class="section-card">
                     <h3>Available</h3>
-                    <div class="donation-item">
-                        <div class="donation-info">
-                            <h4>Yeager</h4>
-                            <p>Category: Cars</p>
-                            <p class="time-ago">1 day ago</p>
+                    <div id="availableDonationsContainer">
+                        <!-- Existing donation item -->
+                        <div class="donation-item">
+                            <div class="donation-info">
+                                <h4>Yeager</h4>
+                                <p>Category: Cars</p>
+                                <p class="time-ago">1 day ago</p>
+                            </div>
+                            <div class="donation-action">
+                                <div class="quantity">Quantity [E413]</div>
+                                <button class="action-btn">Request Donation</button>
+                            </div>
                         </div>
-                        <div class="donation-action">
-                            <div class="quantity">Quantity [E413]</div>
-                            <button class="action-btn">Request Donation</button>
-                        </div>
+                        <!-- New donations will be added here dynamically -->
                     </div>
                 </div>
             </div>
@@ -328,6 +332,9 @@
     </div>
 
     <script>
+        // Store donations data
+        let donations = [];
+        
         // User Profile Dropdown
         document.getElementById('userProfile').addEventListener('click', function() {
             this.classList.toggle('active');
@@ -403,8 +410,18 @@
             const quantity = document.getElementById('quantity').value;
             const photoFile = document.getElementById('photo').files[0];
             
-            // Here you would typically send this data to a server
-            // For now, we'll just show the success message
+            // Create a new donation object
+            const newDonation = {
+                id: Date.now(), // Unique ID
+                wasteType: wasteType,
+                quantity: quantity,
+                photo: photoFile ? URL.createObjectURL(photoFile) : null,
+                timestamp: new Date().toLocaleString(),
+                donorName: "John Doe" // Using the profile name
+            };
+            
+            // Add to donations array
+            donations.push(newDonation);
             
             // Hide form and show success message
             document.getElementById('donationFormContainer').style.display = 'none';
@@ -419,7 +436,37 @@
             // Reset form
             document.getElementById('donationForm').reset();
             document.getElementById('file-chosen').textContent = 'No file chosen';
+            
+            // Add the new donation to the page
+            renderLatestDonation();
         });
+
+        // Function to render the latest donation
+        function renderLatestDonation() {
+            if (donations.length === 0) return;
+            
+            const latestDonation = donations[donations.length - 1];
+            const donationsContainer = document.getElementById('availableDonationsContainer');
+            
+            // Create new donation element
+            const donationElement = document.createElement('div');
+            donationElement.className = 'donation-item';
+            donationElement.innerHTML = `
+                <div class="donation-info">
+                    <h4>${latestDonation.donorName}</h4>
+                    <p>Category: ${latestDonation.wasteType}</p>
+                    <p class="time-ago">Just now</p>
+                </div>
+                <div class="donation-action">
+                    <div class="quantity">Quantity: ${latestDonation.quantity}</div>
+                    <button class="action-btn">Request Donation</button>
+                </div>
+                ${latestDonation.photo ? `<img src="${latestDonation.photo}" alt="Donation photo" class="donation-image">` : ''}
+            `;
+            
+            // Insert new donation at the top of the container
+            donationsContainer.insertBefore(donationElement, donationsContainer.firstChild);
+        }
 
         // Feedback system JavaScript
         document.addEventListener('DOMContentLoaded', function() {

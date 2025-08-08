@@ -287,6 +287,15 @@ header {
     margin-bottom: 8px;
 }
 
+.donation-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+            max-height: 150px;
+            display: block;
+        }
+
 .action-btn {
     padding: 6px 12px;
     background-color: #2e8b57;
